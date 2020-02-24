@@ -5,6 +5,9 @@ package consignment;
 
 service ShippingService {
     rpc CreateConsignment(Consignment) returns (Response) {}
+
+    // Create new method to get consignment
+    rpc GetConsignments(GetRequest) returns (Response) {}
 }
 
 message Consignment {
@@ -25,4 +28,9 @@ message Container {
 message Response {
     bool created = 1;
     Consignment consignment = 2;
+
+    // Added a pluralised consignment to our generic response message
+    repeated Consignment consignments = 3;
 }
+
+message GetRequest {}
