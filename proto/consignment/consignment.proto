@@ -6,13 +6,13 @@ package consignment;
 service ShippingService {
     rpc CreateConsignment(Consignment) returns (Response) {}
 
-    // Create new method to get consignment
+    // Created a new method
     rpc GetConsignments(GetRequest) returns (Response) {}
 }
 
 message Consignment {
     string id = 1;
-    string description =2;
+    string description = 2;
     int32 weight = 3;
     repeated Container containers = 4;
     string vessel_id = 5;
@@ -25,6 +25,9 @@ message Container {
     string user_id = 4;
 }
 
+// Created a blank get request
+message GetRequest {}
+
 message Response {
     bool created = 1;
     Consignment consignment = 2;
@@ -32,5 +35,3 @@ message Response {
     // Added a pluralised consignment to our generic response message
     repeated Consignment consignments = 3;
 }
-
-message GetRequest {}

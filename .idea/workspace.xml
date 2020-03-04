@@ -4,18 +4,16 @@
     <list default="true" id="46eb1f45-7e94-4f10-9962-51031e1741f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/consignment/consignment.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/consignment/consignment.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/consignment/consignment.pb.micro.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/consignment/consignment.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/consignment/consignment.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>RegisterShipping</find>
-      <find>Register</find>
-      <find>registers</find>
-    </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.13.8/libexec" />
   <component name="Git.Settings">
@@ -29,13 +27,17 @@
     </option>
   </component>
   <component name="ProjectId" id="1YVDPzIqaY5Q28BPKN2FUqT4GzJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="GO_FMT" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
@@ -72,8 +74,23 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Made changes to this service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made changes to this service" />
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="423" y="118" key="CommitChangelistDialog2" timestamp="1583021003615">
+      <screen x="0" y="23" width="1680" height="989" />
+    </state>
+    <state x="423" y="118" key="CommitChangelistDialog2/0.23.1680.989@0.23.1680.989" timestamp="1583021003615" />
+    <state x="532" y="341" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583355402082">
+      <screen x="0" y="23" width="1680" height="989" />
+    </state>
+    <state x="532" y="341" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.23.1680.989@0.23.1680.989" timestamp="1583355402082" />
   </component>
   <component name="masterDetails">
     <states>
