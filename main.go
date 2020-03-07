@@ -7,12 +7,11 @@ import (
 	"sync"
 
 	pb "github.com/suliar/shippy-service-consignment/proto/consignment"
-	vp "github.com/suliar/shippy-service-vessel/proto/vessel"
 	"google.golang.org/grpc"
 )
 
 const (
-	port = ":50051"
+	port = ":50052"
 )
 
 type repository interface {
@@ -46,8 +45,8 @@ func (repo *Repository) GetAll() []*pb.Consignment {
 // in the generated code itself for the exact method signatures etc
 // to give you a better idea.
 type service struct {
-	repo         repository
-	vesselClient vp.VesselServiceClient
+	repo repository
+	//vesselClient vp.VesselServiceClient
 }
 
 // CreateConsignment - we created just one method on our service,
@@ -57,18 +56,18 @@ func (s *service) CreateConsignment(ctx context.Context, req *pb.Consignment) (*
 
 	// Here we call a client instance of our vessel service with our consignment weight,
 	// and the amount of containers as the capacity value
-	vesselResponse, err := s.vesselClient.FindAvailable(ctx, &vp.Specification{
-		Capacity:  req.Weight,
-		MaxWeight: int32(len(req.Containers)),
-	})
-	if err != nil {
-		return nil, err
-	}
-	log.Printf("Found vessel: %s \n", vesselResponse.Vessel.Name)
-
-	// We set the vesselId as the vessel we got back from our
-	// vessel service
-	req.VesselId = vesselResponse.Vessel.Id
+	//vesselResponse, err := s.vesselClient.FindAvailable(ctx, &vp.Specification{
+	//	Capacity:  req.Weight,
+	//	MaxWeight: int32(len(req.Containers)),
+	//})
+	//if err != nil {
+	//	return nil, err
+	//}
+	//log.Printf("Found vessel: %s \n", vesselResponse.Vessel.Name)
+	//
+	//// We set the vesselId as the vessel we got back from our
+	//// vessel service
+	//req.VesselId = vesselResponse.Vessel.Id
 
 	// Save our consignment
 	consignment, err := s.repo.Create(req)
@@ -89,14 +88,14 @@ func (s *service) GetConsignments(ctx context.Context, req *pb.GetRequest) (*pb.
 
 func main() {
 	// Set up a connection to the server.
-	address := "localhost:50051"
+	address := "localhost:50052"
 	conn, err := grpc.Dial(address, grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Did not connect: %v", err)
 	}
 	defer conn.Close()
 
-	vesselClient := vp.NewVesselServiceClient(conn)
+	//vesselClient := vp.NewVesselServiceClient(conn)
 	repo := &Repository{}
 
 	// Set-up our gRPC server.
@@ -111,8 +110,8 @@ func main() {
 	// protobuf definition.
 
 	pb.RegisterShippingServiceServer(s, &service{
-		repo:         repo,
-		vesselClient: vesselClient,
+		repo: repo,
+		//vesselClient: vesselClient,
 	},
 	)
 
